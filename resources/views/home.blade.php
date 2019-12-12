@@ -5,6 +5,12 @@
 	<title></title>
 </head>
 <body>
-Hello World!!
+	Hello World!!
+	@if (Auth::check())
+		{{ \Auth::user()->name }}さん
+	@else
+		ゲストさん<br />
+		<a href="/auth/register" >会員登録</a>
+	@endif
 </body>
 </html>
